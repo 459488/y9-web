@@ -4,8 +4,43 @@
         <title>Water Quality, By: Hewitt Ho</title>
         <link rel="stylesheet" href="stylz.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
+            .columns {
+                float: left;
+                padding: 8px;
+                height: 90%;
+            }
+
+            #left_column {
+                width: 31.25%;
+                background-color: palegoldenrod;
+            }
+
+            #middle_column {
+                width: 50%;
+                background-color: limegreen;
+            }
+
+            #right_column {
+                width: 18.75%;
+                background-color: mediumpurple;
+            }
+
+            .button {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 10px 25px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 18px;
+            }
+
+            @media only screen and (max-width: 600px) {
+                .columns {
+                    width: 100%;
+                }
+            }
         </style>
     </head>
     
@@ -14,8 +49,8 @@
         <div class="navbar">
             <a class="main" href="index.html"><i class="material-icons">home</i> Home</a>
             <a href="about.html"><i class="material-icons">info</i> About</a>
-            <a href="#"><i class="material-icons">assessment</i> Data</a>
-            <a href="#"><i class="material-icons">timer</i> Quiz</a>
+            <a href="data.html"><i class="material-icons">assessment</i> Data</a>
+            <a href="quiz.html"><i class="material-icons">timer</i> Quiz</a>
             <a href="#"><i class="material-icons">library_books</i> Stories</a>
             <div class="dropdown">
                 <button class="dropbtn"><i class="material-icons">more_vert</i> More</button>
@@ -25,51 +60,42 @@
                     <a href="#">Links</a>
                 </div>
             </div>
-            <a href="#"><i class="material-icons">search</i> Search</a>
+            <div class="dropdown">
+                <button class="dropbtn"><i class="material-icons">search</i> Search</button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <form action="/action_page.php">
+                            <input type="text" placeholder="Search.." name="search">
+                            <button type="submit"><i class="material-icons">subdirectory_arrow_left</i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
             <a class="blue" href="#"><i class="material-icons">group_add</i> Contribute</a>
         </div>
         
-        <h1>Homepage</h1>
-        
-        <div class="columns" id="left_column">
-        <ul class="price">
-            <li class="header">Basic</li>
-            <li class="grey">$ 9.99 / year</li>
-            <li>10GB Storage</li>
-            <li>10 Emails</li>
-            <li>10 Domains</li>
-            <li>1GB Bandwidth</li>
-            <li class="grey"><a href="#" class="button">Sign Up</a></li>
-        </ul>
-        </div>
+        <div class="content">
+            <div class="columns" id="left_column">
+                <h1>Game Leaderboard</h1>
+            </div>
 
-        <div class="columns" id="middle_column">
-        <ul class="price">
-            <li class="header" style="background-color:#4CAF50">Pro</li>
-            <li class="grey">$ 24.99 / year</li>
-            <li>25GB Storage</li>
-            <li>25 Emails</li>
-            <li>25 Domains</li>
-            <li>2GB Bandwidth</li>
-            <li class="grey"><a href="#" class="button">Sign Up</a></li>
-        </ul>
-        </div>
+            <div class="columns" id="middle_column">
+                <h1>SDG News</h1>
+            </div>
 
-        <div class="columns" id="right_column">
-        <ul class="price">
-            <li class="header">Premium</li>
-            <li class="grey">$ 49.99 / year</li>
-            <li>50GB Storage</li>
-            <li>50 Emails</li>
-            <li>50 Domains</li>
-            <li>5GB Bandwidth</li>
-            <li class="grey"><a href="#" class="button">Sign Up</a></li>
-        </ul>
+            <div class="columns" id="right_column">
+                <h1>Other Links</h1>
+            </div>
         </div>
 
         <div class="footer">
-            <p>Last Updated: 1/31/20</p>
+                <p id="demo"></p>
         </div>
+        
+        <script>
+                var x = document.lastModified;
+                document.getElementById("demo").innerHTML = "Last Modified " + x;
+        </script>
 
     </body>
     
