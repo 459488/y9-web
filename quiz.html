@@ -1,0 +1,109 @@
+<html>
+   
+    <head>
+        <title>Can You Beat Top 10 Of Users Of This Site In This Quiz</title>
+        <link rel="stylesheet" href="stylz.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <style>
+            #container {
+            width: 600px;
+            height: auto;
+            }
+
+            .row {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 40px;
+            border-bottom: 1px solid #AFAFAF;
+            }
+
+            .name {
+            position: relative;
+            display: inline-block;
+            width: 75%;
+            line-height: 45px;
+            }
+
+            .score {
+            position: relative;
+            display: inline-block;
+            width: 25%;
+            }
+        </style>
+    </head>
+    
+    <body>
+        
+        <div class="navbar">
+            <a class="main" href="index.html"><i class="material-icons">home</i> Home</a>
+            <a href="about.html"><i class="material-icons">info</i> About</a>
+            <a href="data.html"><i class="material-icons">assessment</i> Data</a>
+            <a href="quiz.html"><i class="material-icons">timer</i> Quiz</a>
+            <a href="#"><i class="material-icons">library_books</i> Stories</a>
+            <div class="dropdown">
+                <button class="dropbtn"><i class="material-icons">more_vert</i> More</button>
+                <div class="dropdown-content">
+                    <a href="#">Settings</a>
+                    <a href="#">Coming Soon</a>
+                    <a href="#">Links</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn"><i class="material-icons">search</i> Search</button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <form action="/action_page.php">
+                            <input type="text" placeholder="Search.." name="search">
+                            <button type="submit"><i class="material-icons">subdirectory_arrow_left</i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <a class="blue" href="#"><i class="material-icons">group_add</i> Contribute</a>
+        </div>
+        
+        <div class="content">
+            <div>
+                <p>Is water good?</p>
+                <form action="">
+                    <input type="radio" name="answer" value="true"> True<br>
+                    <input type="radio" name="answer" value="false"> False
+                </form>
+                <p>Leaderboard:</p>
+            </div>
+            <div id="container">
+                <div class="row">
+                    <div class="name">Hewitt</div><div class="score">1000</div>
+                </div>
+                
+                <div class="row">
+                    <div class="name">Is</div><div class="score">800</div>
+                </div>
+                
+                <div class="row">
+                    <div class="name">A</div><div class="score">600</div>
+                </div>
+                
+                <div class="row">
+                    <div class="name">Great</div><div class="score">400</div>
+                </div>
+                
+                <div class="row">
+                    <div class="name">Coder</div><div class="score">200</div>
+                </div>
+            </div>
+        </div>
+            
+        <div class="footer">
+            <p id="demo"></p>
+        </div>
+        
+        <script>
+                var x = document.lastModified;
+                document.getElementById("demo").innerHTML = "Last Modified " + x;
+        </script>
+
+    </body>
+    
+</html>
