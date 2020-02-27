@@ -1,10 +1,14 @@
 <html>
    
     <head>
+        
         <title>Clean Water Statistics</title>
+
         <link rel="stylesheet" href="stylz.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        
         <style>
+            
             .flip-card {
             background-color: transparent;
             width: 300px;
@@ -43,7 +47,9 @@
             color: white;
             transform: rotateY(180deg);
             }
+
         </style>
+
     </head>
     
     <body>
@@ -77,7 +83,52 @@
         </div>
         
         <div class="content">
+            
+            <div id="indicator">
+                <select id="geoareaname">
+                    <option></option>
+                    <option>World</option>
+                </select>
+                <select id="year">
+                    <option></option>
+                    <option>2000</option>
+                    <option>2001</option>
+                    <option>2002</option>
+                    <option>2003</option>
+                    <option>2004</option>
+                    <option>2005</option>
+                    <option>2006</option>
+                    <option>2007</option>
+                    <option>2008</option>
+                    <option>2009</option>
+                    <option>2010</option>
+                    <option>2011</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                    <option>2016</option>
+                    <option>2017</option>
+                </select>
+                <form id="location">
+                    <input id="option1" type="radio" name="answer" value="All Area"> All Area<br>
+                    <input id="option2" type="radio" name="answer" value="Urban"> Urban<br>
+                    <input id="option3" type="radio" name="answer" value="Rural"> Rural<br>
+                    <input id="option4" type="radio" name="answer" value="Show All"> Show All
+                </form>
+                <button onclick="showdata()">Find Data</button>
+                <br>
+                <p id="Feedback"></p>
+                <form id="notaneyesore" style="visibility: hidden;">
+                    <input type="checkbox" name="answer"> Bar Graph<br>
+                    <input type="checkbox" name="answer"> Map<br>
+                    <input type="checkbox" name="answer"> Pictograph<br>
+                    <input type="checkbox" name="answer"> Pie Chart
+                </form>
+            </div>
+            
             <img src="drinking-water.jpg" style="width: 50%">
+            <h1>More Quick Facts</h1>
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
@@ -90,17 +141,51 @@
                     </div>
                 </div>
             </div>
+
         </div>
         
         <div class="footer">
             <p id="demo"></p>
         </div>
-        
-        <script>
-                var x = document.lastModified;
-                document.getElementById("demo").innerHTML = "Last Modified " + x;
-        </script>
 
-    </body>
+    </body> 
+
+    <script>
+                
+        var x = document.lastModified;
+        document.getElementById("demo").innerHTML = "Last Refreshed " + x
+
+        function showdata() {
+            var a = document.getElementById("geoareaname").value;
+            var b = document.getElementById("year").value;
+            if (document.getElementById("option1").checked == true) {
+                var c = document.getElementById("option1").value
+            } else if (document.getElementById("option2").checked == true) {
+                var c = document.getElementById("option2").value
+            } else if (document.getElementById("option3").checked == true) {
+                var c = document.getElementById("option3").value
+            } else if (document.getElementById("option4").checked == true) {
+                var c = document.getElementById("option4").value
+            }
+            console.log(a + " " + b + " " + c);
+            if (a !== "" && b !== "" && c == "All Area") {
+                document.getElementById("Feedback").innerHTML = "You Have Selected The Following Data:<br>" + a + " from " + b + " in " + c + "<br>(format data in option below)";
+                document.getElementById("notaneyesore").style.visibility = "visible"
+            } else if (a !== "" && b !== "" && c == "Urban") {
+                document.getElementById("Feedback").innerHTML = "You Have Selected The Following Data:<br>" + a + " from " + b + " in " + c + " area<br>(format data in option below)";
+                document.getElementById("notaneyesore").style.visibility = "visible"
+            } else if (a !== "" && b !== "" && c == "Rural") {
+                document.getElementById("Feedback").innerHTML = "You Have Selected The Following Data:<br>" + a + " from " + b + " in " + c + " area<br>(format data in option below)";
+                document.getElementById("notaneyesore").style.visibility = "visible"
+            } else if (a !== "" && b !== "" && c == "Show All") {
+                document.getElementById("Feedback").innerHTML = "You Have Selected The Following Data:<br>" + a + " from " + b + " in " + "Rural Area, Urban Area, And All Area<br>(format data in option below)";
+                document.getElementById("notaneyesore").style.visibility = "visible"
+            }
+            else {
+                alert("Please Specify Data Range")
+            }
+        }
+        
+    </script>
     
 </html>
