@@ -206,40 +206,35 @@
                 years.push(parseInt(x))
                 console.log(years)
             }
-            for (i = 0; i < data.length; i ++) {
-                if (data[i]['GeoAreaName'] == a && years.includes(data[i]['TimePeriod']) == true && data[i]['[Location]'] == c && c !== "SHOWALL") {
-                    console.log(data[i]['Value'])
-/*
-                    var a = (10 + i * 100)
-                    var b = (40 + i * 100)
-                    ctx.fillStyle = colors[i];
-                    ctx.fillRect(10,a,data[rows[i]]['Value'] * 10,50);
-                    ctx.fillStyle = "white"
-                    ctx.fillText(data[rows[i]]['Value'], 20, b);
-*/
-                } else if (data[i]['GeoAreaName'] == a && years.includes(data[i]['TimePeriod']) == true && c == "SHOWALL") {
-                    console.log(data[i]['Value'])
-/*
-                    var a = (10 + i * 100)
-                    var b = (40 + i * 100)
-                    ctx.fillStyle = colors[i];
-                    ctx.fillRect(10,a,data[rows[i]]['Value'] * 10,50);
-                    ctx.fillStyle = "white"
-                    ctx.fillText(data[rows[i]]['Value'], 20, b);
-*/
+            if (b1 > b2) {
+                alert("Start range must not be greater than end range")
+            } else if (a == "" || a == null || b1 == "" || b2 == "" || c !== "ALLAREA" && c !== "URBAN" && c !== "RURAL" && c !== "SHOWALL") {
+                alert("Please Specify Data Range")
+            } else {
+                for (i = 0; i < data.length; i ++) {
+                    if (data[i]['GeoAreaName'] == a && years.includes(data[i]['TimePeriod']) == true && data[i]['[Location]'] == c && c !== "SHOWALL") {
+                        console.log(data[i]['Value'])
+    /*
+                        var a = (10 + i * 100)
+                        var b = (40 + i * 100)
+                        ctx.fillStyle = colors[i];
+                        ctx.fillRect(10,a,data[rows[i]]['Value'] * 10,50);
+                        ctx.fillStyle = "white"
+                        ctx.fillText(data[rows[i]]['Value'], 20, b);
+    */
+                    } else if (data[i]['GeoAreaName'] == a && years.includes(data[i]['TimePeriod']) == true && c == "SHOWALL") {
+                        console.log(data[i]['Value'])
+    /*
+                        var a = (10 + i * 100)
+                        var b = (40 + i * 100)
+                        ctx.fillStyle = colors[i];
+                        ctx.fillRect(10,a,data[rows[i]]['Value'] * 10,50);
+                        ctx.fillStyle = "white"
+                        ctx.fillText(data[rows[i]]['Value'], 20, b);
+    */
+                    }
                 }
             }
-/*
-            if (a !== "" || a !== null && b1 !== "" && b2 !== "" && c !== "ALLAREA" && c !== "URBAN" &&   c !== "RURAL" &&   c !== "SHOWALL" &&) {
-                document.getElementById("Feedback").innerHTML = "You Have Selected The Following Data:<br>" + a + " from " + b + " in " + c + "<br>(format data in option below)";
-                document.getElementById("notaneyesore").style.visibility = "visible"
-            } else if (b1 > b2) {
-                alert("Start range must not be greater than end range")
-            } else {
-                alert("Please Specify Data Range")
-            }
-*/
-
 /*
             if (a !== "" && b1 !== "" && b2 !== "" && c == "All Area") {
                 document.getElementById("Feedback").innerHTML = "You Have Selected The Following Data:<br>" + a + " from " + b + " in " + c + "<br>(format data in option below)";
