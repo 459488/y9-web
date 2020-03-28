@@ -70,6 +70,7 @@
         </div>
         
         <div class="content">
+            
             <div>
                 <p>Is water good?</p>
                 <form action="">
@@ -78,7 +79,9 @@
                 </form>
                 <p>Leaderboard:</p>
             </div>
+            
             <div id="container">
+                
                 <div class="row">
                     <div class="name">Hewitt</div><div class="score">1000</div>
                 </div>
@@ -98,7 +101,9 @@
                 <div class="row">
                     <div class="name">Coder</div><div class="score">200</div>
                 </div>
+            
             </div>
+
         </div>
             
         <div class="footer">
@@ -108,10 +113,14 @@
     </body>
     
     <script>
-                
-        var x = document.lastModified;
-        document.getElementById("demo").innerHTML = "Last Refreshed " + x;
-    
+
+        footer()
+
+        function footer() {
+            var x = document.lastModified;
+            document.getElementById("demo").innerHTML = "Last Refreshed " + x;            
+        }
+
     </script>    
 
 </html>

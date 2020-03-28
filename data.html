@@ -15,7 +15,7 @@
             }
 
             /*the container must be positioned relative:*/
-            .autocomplete {
+            .step1 {
                 position: relative;
                 display: inline-block;
             }
@@ -28,32 +28,32 @@
                 width: 100%;
             }
 
-            .autocomplete-items {
+            .step1-items {
                 position: absolute;
                 border: 1px solid #d4d4d4;
                 border-bottom: none;
                 border-top: none;
                 z-index: 99;
-                /*position the autocomplete items to be the same width as the container:*/
+                /* position the autocomp lete items to be the same width as the container: */
                 top: 100%;
                 left: 0;
                 right: 0;
             }
 
-            .autocomplete-items div {
+            .step1-items div {
                 padding: 10px;
                 cursor: pointer;
                 background-color: #fff; 
                 border-bottom: 1px solid #d4d4d4; 
             }
 
-            /*when hovering an item:*/
-            .autocomplete-items div:hover {
+            /* when hovering an item: */
+            .step1-items div:hover {
                 background-color: #e9e9e9; 
             }
 
-            /*when navigating through the items using the arrow keys:*/
-            .autocomplete-active {
+            /* when navigating through the items using the arrow keys: */
+            .step1-active {
                 background-color: DodgerBlue !important; 
                 color: #ffffff; 
             }
@@ -131,94 +131,111 @@
             <a class="blue" href="#"><i class="material-icons">group_add</i> Contribute</a>
         </div>
         
-        <div class="content">
-            
+        <div class="content">           
+
             <div id="indicator">
+                
                 <h1>Find Data Using Selection System Below</h1>
-                <h3 >Step 1: Enter A Geo Area</h3>
-                <form class="autocomplete" style="width:300px;">
+                
+                <form class="step1" style="width:300px;">
+                    <h3>Step 1: Enter A Geo Area</h3>
                     <input id="geoareaname" type="text" placeholder="Enter A Place">
                 </form>
-                <h3>Step 2: Specify A Time Range</h3>
-                <label for="year1">Start Year:</label>
-                <select id="year1">
-                    <option></option>
-                    <option>2000</option>
-                    <option>2001</option>
-                    <option>2002</option>
-                    <option>2003</option>
-                    <option>2004</option>
-                    <option>2005</option>
-                    <option>2006</option>
-                    <option>2007</option>
-                    <option>2008</option>
-                    <option>2009</option>
-                    <option>2010</option>
-                    <option>2011</option>
-                    <option>2012</option>
-                    <option>2013</option>
-                    <option>2014</option>
-                    <option>2015</option>
-                    <option>2016</option>
-                    <option>2017</option>
-                </select>
-                <label for="year1">End Year:</label>
-                <select id="year2">
-                    <option></option>
-                    <option>2000</option>
-                    <option>2001</option>
-                    <option>2002</option>
-                    <option>2003</option>
-                    <option>2004</option>
-                    <option>2005</option>
-                    <option>2006</option>
-                    <option>2007</option>
-                    <option>2008</option>
-                    <option>2009</option>
-                    <option>2010</option>
-                    <option>2011</option>
-                    <option>2012</option>
-                    <option>2013</option>
-                    <option>2014</option>
-                    <option>2015</option>
-                    <option>2016</option>
-                    <option>2017</option>
-                </select>
-<!--
-                <div id="year">
-                    Year <input type="text" id="start">
-                    To <input type="text" id="end">
-                    <br>
-                </div>
--->
-                <h3>Step 3: Choose A Type Of Developed Environment</h3>
-                <form id="location">
-                    <input id="option1" type="radio" name="answer" value="ALLAREA"> All Area<br>
-                    <input id="option2" type="radio" name="answer" value="URBAN"> Urban<br>
-                    <input id="option3" type="radio" name="answer" value="RURAL"> Rural<br>
-                    <input id="option4" type="radio" name="answer" value="SHOWALL"> Show All
+                
+                <form id="step2">
+                    <h3>Step 2: Specify A Time Range</h3>
+                    <label for="year1">Start Year:</label>
+                    <select id="year1">
+                        <option></option>
+                        <option>2000</option>
+                        <option>2001</option>
+                        <option>2002</option>
+                        <option>2003</option>
+                        <option>2004</option>
+                        <option>2005</option>
+                        <option>2006</option>
+                        <option>2007</option>
+                        <option>2008</option>
+                        <option>2009</option>
+                        <option>2010</option>
+                        <option>2011</option>
+                        <option>2012</option>
+                        <option>2013</option>
+                        <option>2014</option>
+                        <option>2015</option>
+                        <option>2016</option>
+                        <option>2017</option>
+                    </select>
+                    <label for="year1">End Year:</label>
+                    <select id="year2">
+                        <option></option>
+                        <option>2000</option>
+                        <option>2001</option>
+                        <option>2002</option>
+                        <option>2003</option>
+                        <option>2004</option>
+                        <option>2005</option>
+                        <option>2006</option>
+                        <option>2007</option>
+                        <option>2008</option>
+                        <option>2009</option>
+                        <option>2010</option>
+                        <option>2011</option>
+                        <option>2012</option>
+                        <option>2013</option>
+                        <option>2014</option>
+                        <option>2015</option>
+                        <option>2016</option>
+                        <option>2017</option>
+                    </select>
                 </form>
-                <button onclick="retrieve()">Find Data</button>
-                <br>
-                <p id="Feedback"></p>
-                <div id="onvalidsubmission" style="visibility: hidden;">
-                    <h3>Step 4: Pick The Form(s) Which Your Data Will Displayed</h3>
-                    <form id="datadisplay">
-                        <input type="checkbox" name="answer"> Bar Graph (Vertical)<br>
-                        <input type="checkbox" name="answer"> Bar Graph (Horizontal)<br>
-                        <input type="checkbox" name="answer"> Map<br>
-                        <input type="checkbox" name="answer"> Pie Chart<br>
-                        <input type="checkbox" name="answer"> Line Graph<br>
-                        <input type="checkbox" name="answer"> Raw Data
+                
+                <form id="step3">
+                    <h3>Step 3: Choose A Type Of Developed Environment</h3>
+                    <input id="a1" type="radio" name="answer" value="ALLAREA"> All Area<br>
+                    <input id="a2" type="radio" name="answer" value="URBAN"> Urban<br>
+                    <input id="a3" type="radio" name="answer" value="RURAL"> Rural<br>
+                    <input id="a4" type="radio" name="answer" value="SHOWALL"> Show All
+                </form>
+                
+                <input id="submitbutton" type="submit" value="Find Data" onclick="retrieve()">
+                
+                <div id="onvalidsubmission" style="display: none;">
+                    
+                    <form id="step4">
+                        <h3>Step 4: Pick The Form(s) Which Your Data Will Displayed</h3>
+                        <input id="b1" type="checkbox" name="answer" onchange="drawbarh()"> Bar Graph (Horizontal)<br>
+                        <input id="b2" type="checkbox" name="answer" onchange="drawbarv()"> Bar Graph (Vertical)<br>
+                        <input id="b3" type="checkbox" name="answer" onchange="drawmap()"> Map<br>
+                        <input id="b4" type="checkbox" name="answer" onchange="drawpie()"> Pie Chart<br>
+                        <input id="b5" type="checkbox" name="answer" onchange="drawline()"> Line Graph<br>
+                        <input id="b6" type="checkbox" name="answer"> Raw Data
                     </form>
+
+                    <div id="datadisplay" style="visibility: hidden;">
+                        <canvas id="BarH" width="0" height="0" style="border:1px solid #d3d3d3;"></canvas>
+                        <canvas id="BarV" width="0" height="0" style="border:1px solid #d3d3d3;"></canvas>
+                        <canvas id="Map" width="0" height="0" style="border:1px solid #d3d3d3;"></canvas>
+                        <canvas id="Pie" width="0" height="0" style="border:1px solid #d3d3d3;"></canvas>
+                        <canvas id="Line" width="0" height="0" style="border:1px solid #d3d3d3;"></canvas>
+                        <p id="Raw"></p>
+                    </div>
+
+                    <input id="resetbutton" type="reset" value="Change Data Selection (Reset)" onclick="reset()">
+
                 </div>
-                <canvas></canvas>
-            </div>
+                
+                <br>
+                <br>
+                <br>
+                <hr>
             
+            </div>
+
             <div id="infographic">
                 <img src="drinking-water.jpg" style="width: 50%">
             </div>
-
+ 
             <div id="facts">
                 <h1>More Quick Facts</h1>
                 <div class="flip-card">
@@ -247,82 +264,64 @@
 
         // An array containing all the country names in the world:
         var countries = ["Albania", "American Samoa", "Andorra", "Armenia", "Asia", "Australia", "Australia and New Zealand", "Austria", "Azerbaijan", "Bahrain", "Bangladesh", "Belarus", "Belgium", "Bhutan", "Bosnia and Herzegovina", "Botswana", "Brazil", "Bulgaria", "Cambodia", "Canada", "Caucasus and Central Asia", "Central America", "Central Asia", "Channel Islands", "Chile", "China", "China, Hong Kong Special Administrative Region", "China, Macao Special Administrative Region", "Colombia", "Congo", "Costa Rica", "Croatia", "Cyprus", "Czechia", "Côte d'Ivoire", "Democratic People's Republic of Korea", "Denmark", "Developed regions (Europe, Cyprus, Israel, Northern America, Japan, Australia & New Zealand)", "Eastern Africa", "Eastern Asia", "Eastern Asia (excluding Japan)", "Eastern Europe", "Ecuador", "El Salvador", "Estonia", "Eswatini", "Ethiopia", "Europe", "Finland", "France", "French Guiana", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Honduras", "Hungary", "Iceland", "India", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kuwait", "Kyrgyzstan", "Landlocked developing countries (LLDCs)", "Lao People's Democratic Republic", "Latin America and the Caribbean", "Latvia", "Least Developed Countries (LDCs)", "Lebanon", "Liechtenstein"," Lithuania", "Luxembourg", "Malaysia", "Malta", "Martinique", "Mayotte", "Mexico", "Micronesia", "Monaco", "Mongolia", "Montenegro", "Morocco", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Nigeria", "Niue", "North Macedonia", "Northern America", "Northern Europe", "Northern Mariana Islands", "Norway", "Oceania", "Oman", "Pakistan", "Paraguay", "Peru", "Philippines", "Poland", "Polynesia", "Portugal", "Puerto Rico", "Qatar", "Republic of Korea", "Republic of Moldova", "Romania", "Russian Federation", "Rwanda", "Réunion", "Saint Helena", "Saint Pierre and Miquelon", "Samoa", "San Marino", "Serbia", "Sierra Leone", "Singapore", "Slovakia", "Slovenia","South Africa", "South America", "Southern Africa", "Southern Asia", "Southern Europe", "Spain", "Sri Lanka", "Sub-Saharan Africa", "Sub-Saharan Africa (inc. Sudan)", "Sweden", "Switzerland", "Tajikistan", "Tunisia", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Kingdom of Great Britain and Northern Ireland", "United Republic of Tanzania", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Western Africa", "Western Asia", "Western Europe", "World", "Zambia"]
+        var colors = ["black","red","blue","green","grey"];
         // initiate the autocomplete function on the "geoareaname" element, and pass along the countries array as possible autocomplete values:
         autocomplete(document.getElementById("geoareaname"), countries)
-                
+        footer()  
+        
         function retrieve() {
+            document.getElementById("submitbutton").style.display = "none";
             var a = document.getElementById("geoareaname").value;
             var b1 = document.getElementById("year1").value;
             var b2 = document.getElementById("year2").value;
-            if (document.getElementById("option1").checked == true) {
-                var c = document.getElementById("option1").value
-            } else if (document.getElementById("option2").checked == true) {
-                var c = document.getElementById("option2").value
-            } else if (document.getElementById("option3").checked == true) {
-                var c = document.getElementById("option3").value
-            } else if (document.getElementById("option4").checked == true) {
-                var c = document.getElementById("option4").value
+            if (document.getElementById("a1").checked == true) {
+                var c = document.getElementById("a1").value;
+            } else if (document.getElementById("a2").checked == true) {
+                var c = document.getElementById("a2").value;
+            } else if (document.getElementById("a3").checked == true) {
+                var c = document.getElementById("a3").value;
+            } else if (document.getElementById("a4").checked == true) {
+                var c = document.getElementById("a4").value;
             }
-/*
-            var d = document.getElementById("myCanvas");
-            var ctx = d.getContext("2d");
-            colors = ["black","red","blue","yellow","green","grey"];
-*/
-            var years = []
+            graph = [];
+            text = [];
+            var years = [];
             for (x = b1; x <= b2; x ++) {
-                years.push(parseInt(x))
-                console.log(years)
+                years.push(parseInt(x));
+                console.log(years);
             }
             if (b1 > b2) {
-                alert("Start Year Cannot Be Greater Than The End Year")
-            } else if (countries.includes(a) == false) {
-                alert("Please Enter A Valid Geo Area")
+                alert("Start Year Cannot Be Greater Than The End Year");
             } else if (a == null || b1 == "" || b2 == "" || c !== "ALLAREA" && c !== "URBAN" && c !== "RURAL" && c !== "SHOWALL") {
-                alert("Please Specify Data Range")
+                alert("Please Complete All The Forms To Find Data");
+            } else if (countries.includes(a) == false ) {
+                alert("Please Enter A Valid Geo Area");
             } else {
                 for (i = 0; i < data.length; i ++) {
                     if (data[i]['GeoAreaName'] == a && years.includes(data[i]['TimePeriod']) == true && data[i]['[Location]'] == c && c !== "SHOWALL") {
-                        document.getElementById("onvalidsubmission").style.visibility = "visible"
-                        console.log(data[i]['GeoAreaName'] + " " + data[i]['TimePeriod'] + " " + data[i]['[Location]'] + " : " + data[i]['Value'] + "%")
-    /*
-                        var a = (10 + i * 100)
-                        var b = (40 + i * 100)
-                        ctx.fillStyle = colors[i];
-                        ctx.fillRect(10,a,data[rows[i]]['Value'] * 10,50);
-                        ctx.fillStyle = "white"
-                        ctx.fillText(data[rows[i]]['Value'], 20, b);
-    */
+                        document.getElementById("onvalidsubmission").style.display = "block";
+                        graph.push(data[i]['Value']);
+                        text.push(data[i]['TimePeriod'] + " - " + data[i]['GeoAreaName'] + ", " + data[i]['[Location]'] + " : " + data[i]['Value'] + "%");
+                        console.log(text);
+                        console.log(graph);
                     } else if (data[i]['GeoAreaName'] == a && years.includes(data[i]['TimePeriod']) == true && c == "SHOWALL") {
-                        document.getElementById("onvalidsubmission").style.visibility = "visible"
-                        console.log(data[i]['GeoAreaName'] + " " + data[i]['TimePeriod'] + " " + data[i]['[Location]'] + " : " + data[i]['Value'] + "%")
-    /*
-                        var a = (10 + i * 100)
-                        var b = (40 + i * 100)
-                        ctx.fillStyle = colors[i];
-                        ctx.fillRect(10,a,data[rows[i]]['Value'] * 10,50);
-                        ctx.fillStyle = "white"
-                        ctx.fillText(data[rows[i]]['Value'], 20, b);
-    */
+                        document.getElementById("onvalidsubmission").style.display = "block";
+                        graph.push(data[i]['Value']);
+                        text.push(data[i]['TimePeriod'] + " - " + data[i]['GeoAreaName'] + ", " + data[i]['[Location]'] + " : " + data[i]['Value'] + "%");
+                        console.log(text);
+                        console.log(graph);
                     }
                 }
             }
-/*
-            if (a !== "" && b1 !== "" && b2 !== "" && c == "All Area") {
-                document.getElementById("Feedback").innerHTML = "You Have Selected The Following Data:<br>" + a + " from " + b + " in " + c + "<br>(format data in option below)";
-                document.getElementById("notaneyesore").style.visibility = "visible"
-            } else if (a !== "" && b1 !== "" && b2 !== "" && c == "Urban") {
-                document.getElementById("Feedback").innerHTML = "You Have Selected The Following Data:<br>" + a + " from " + b + " in " + c + " area<br>(format data in option below)";
-                document.getElementById("notaneyesore").style.visibility = "visible"
-            } else if (a !== "" && b1 !== "" && b2 !== "" && c == "Rural") {
-                document.getElementById("Feedback").innerHTML = "You Have Selected The Following Data:<br>" + a + " from " + b + " in " + c + " area<br>(format data in option below)";
-                document.getElementById("notaneyesore").style.visibility = "visible"
-            } else if (a !== "" && b1 !== "" && b2 !== "" c == "Show All") {
-                document.getElementById("Feedback").innerHTML = "You Have Selected The Following Data:<br>" + a + " from " + b + " in " + "Rural Area, Urban Area, And All Area<br>(format data in option below)";
-                document.getElementById("notaneyesore").style.visibility = "visible"
-            } else {
-                alert("Please Specify Data Range")
-            }
-*/
+        }
+
+        function reset() {
+            document.getElementById("submitbutton").style.display = "block";
+            document.getElementById("onvalidsubmission").style.display = "none";
+            document.getElementById("geoareaname").value = ""
+            document.getElementById("step2").reset()
+            document.getElementById("step3").reset()
+            document.getElementById("step4").reset()
         }
 
         function autocomplete(inp, arr) {
@@ -337,8 +336,8 @@
                 currentFocus = -1;
                 // create a DIV element that will contain the items (values):
                 a = document.createElement("DIV");
-                a.setAttribute("id", this.id + "autocomplete-list");
-                a.setAttribute("class", "autocomplete-items");
+                a.setAttribute("id", this.id + "step1-list");
+                a.setAttribute("class", "step1-items");
                 // append the DIV element as a child of the autocomplete container:
                 this.parentNode.appendChild(a);
                 //for each item in the array...
@@ -365,7 +364,7 @@
             });
             //execute a function presses a key on the keyboard:
             inp.addEventListener("keydown", function(e) {
-                var x = document.getElementById(this.id + "autocomplete-list");
+                var x = document.getElementById(this.id + "step1-list");
                 if (x) x = x.getElementsByTagName("div");
                 if (e.keyCode == 40) {
                     // If the arrow DOWN key is pressed, increase the currentFocus variable:
@@ -393,18 +392,18 @@
                 removeActive(x);
                 if (currentFocus >= x.length) currentFocus = 0;
                 if (currentFocus < 0) currentFocus = (x.length - 1);
-                // add class "autocomplete-active":
-                x[currentFocus].classList.add("autocomplete-active");
+                // add class "step1-active":
+                x[currentFocus].classList.add("step1-active");
             }
             function removeActive(x) {
                 // a function to remove the "active" class from all autocomplete items:
                 for (var i = 0; i < x.length; i++) {
-                x[i].classList.remove("autocomplete-active");
+                x[i].classList.remove("step1-active");
                 }
             }
             function closeAllLists(elmnt) {
                 // close all autocomplete lists in the document, except the one passed as an argument:
-                var x = document.getElementsByClassName("autocomplete-items");
+                var x = document.getElementsByClassName("step1-items");
                 for (var i = 0; i < x.length; i++) {
                 if (elmnt != x[i] && elmnt != inp) {
                     x[i].parentNode.removeChild(x[i]);
@@ -417,8 +416,52 @@
         });
         }
 
-        var x = document.lastModified;
-        document.getElementById("demo").innerHTML = "Last Refreshed " + x
+        function drawbarh() {
+            var c = document.getElementById("BarH");
+            var ctx = c.getContext("2d");
+            if (document.getElementById("b1").checked == true) {
+                document.getElementById("BarH").style.visibility = "visible"
+                c.width = 1020;
+                c.height = (10 + graph.length * 60);
+                for (i = 0; i < graph.length; i ++) {
+                    var a = (10 + i * 60);
+                    var b = (40 + i * 60);
+                    ctx.fillStyle = colors[i];
+                    ctx.fillRect(10,a,graph[i]*10,50);
+                    ctx.fillStyle = "white"
+                    ctx.fillText(text[i], 20, b);
+                }        
+            } else {
+                document.getElementById("BarH").style.visibility = "hidden"
+                c.width = 0;
+                c.height = 0;
+            }
+        }
+    
+        function drawbarv() {
+            var c = document.getElementById("BarV");
+            var ctx = c.getContext("2d");
+            if (document.getElementById("b2").checked == true) {
+                document.getElementById("BarV").style.visibility = "visible"
+                c.width = (10 + graph.length * 60);
+                c.height = 1020;
+                for (i = 0; i < graph.length; i ++) {
+                    var a = (10 + i * 60);
+                    var b = (40 + i * 60);
+                    ctx.fillStyle = colors[i];
+                    ctx.fillRect(a,(1010-graph[i]*10),50,graph[i]*10);
+                }        
+            } else {
+                document.getElementById("BarV").style.visibility = "hidden"
+                c.width = 0;
+                c.height = 0;
+            }
+        }
+
+        function footer() {
+            var x = document.lastModified;
+            document.getElementById("demo").innerHTML = "Last Refreshed " + x;            
+        }
         
     </script>
     

@@ -81,6 +81,7 @@
         </div>
         
         <div class="content">
+            
             <div class="columns" id="left_column">
                 <h1>Game Leaderboard</h1>
             </div>
@@ -92,6 +93,7 @@
             <div class="columns" id="right_column">
                 <h1>Other Links</h1>
             </div>
+        
         </div>
 
         <div class="footer">
@@ -101,9 +103,13 @@
     </body>
 
     <script>
-                
-        var x = document.lastModified;
-        document.getElementById("demo").innerHTML = "Last Refreshed " + x;
+
+        footer()
+           
+        function footer() {
+            var x = document.lastModified;
+            document.getElementById("demo").innerHTML = "Last Refreshed " + x;            
+        }     
                 
     </script>
 
