@@ -1,0 +1,106 @@
+<html>
+   
+    <head>
+        
+        <title>Fill This In</title>
+        
+        <link rel="stylesheet" href="#">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        
+        <style>
+
+            .navbar {
+                width: 100%;
+                background-color: darkred;
+                overflow: auto;
+            }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            .navbar a:hover {
+                background-color: #000;
+            }
+
+            .navbar a.active {
+                background-color: #2196F3;
+                color: white;
+            }
+
+            .main {
+                background-color: #4CAF50;
+            }
+            
+            @media screen and (max-width: 600px) {
+                .navbar .search-container {
+                    float: none;
+                }
+                .navbar a, .navbar input[type=text], .navbar .search-container button {
+                    float: none;
+                    display: block;
+                    text-align: left;
+                    width: 100%;
+                    margin: 0;
+                    padding: 14px;
+                }
+                .navbar input[type=text] {
+                    border: 1px solid #ccc;  
+                }
+            }
+            
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                height: 50px;
+                width: 100%;
+                background-color: black;
+                color: white;
+                text-align: center;
+            }
+
+        </style>
+
+    </head>
+    
+    <body>
+        
+        <div class="navbar">
+            <a class="main" href="#"><i class="material-icons">home</i> Home</a>
+        </div>
+        
+        <div class="content">
+            <p>Everything Important Here</p>
+        </div>
+            
+        <div class="footer">
+            <p id="demo"></p>
+        </div>
+
+    </body>
+    
+    <script>
+
+        /*
+        function example() {
+            var a = document.getElementById("#").value;
+            var b = document.getElementById("#").value;
+            var c = document.getElementById("#").value;
+            if (a == "" || a == null || b == "" || b == null || c == "" || c == null) {
+                alert("please enter fill the text box")
+            } else {
+                document.getElementById("writing").innerHTML = a + b + c;
+            }
+        }   
+        */
+
+    </script>
+
+</html>
