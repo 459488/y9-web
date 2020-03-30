@@ -46,7 +46,7 @@
             <a href="about.html"><i class="material-icons">info</i> About</a>
             <a href="data.html"><i class="material-icons">assessment</i> Data</a>
             <a href="quiz.html"><i class="material-icons">timer</i> Quiz</a>
-            <a href="#"><i class="material-icons">library_books</i> Stories</a>
+            <a href="stories.html"><i class="material-icons">library_books</i> Stories</a>
             <div class="dropdown">
                 <button class="dropbtn"><i class="material-icons">more_vert</i> More</button>
                 <div class="dropdown-content">
@@ -66,21 +66,26 @@
                     </div>
                 </div>
             </div>
-            <a class="blue" href="#"><i class="material-icons">group_add</i> Contribute</a>
+            <a class="blue" href="https://water.org/donate/"><i class="material-icons">group_add</i> Contribute</a>
         </div>
         
         <div class="content">
             
+            <h1>Coming Soon! What You Are Seeing Is A Preview Of This Page, Currently Under Construction</h1>
+
             <div>
-                <p>Is water good?</p>
+                <p>Everyone in the world has full, sustainable access to clean and safe drinking water</p>
                 <form action="">
-                    <input type="radio" name="answer" value="true"> True<br>
-                    <input type="radio" name="answer" value="false"> False
+                    <input id="true" type="radio" name="answer"> True<br>
+                    <input id="false" type="radio" name="answer"> False<br>
                 </form>
-                <p>Leaderboard:</p>
+                <input id="submitbutton" type="submit" value="See Results" onclick="answer()">
+                <p id="result"></p>
             </div>
             
             <div id="container">
+
+                <p>Leaderboard:</p>
                 
                 <div class="row">
                     <div class="name">Hewitt</div><div class="score">1000</div>
@@ -115,6 +120,18 @@
     <script>
 
         footer()
+
+        function answer() {
+            if (document.getElementById("true").checked == true) {
+                document.getElementById("result").style.color = "Red"
+                document.getElementById("result").innerHTML = "Incorrect - Try Again"
+            } else if (document.getElementById("false").checked == true) {
+                document.getElementById("result").style.color = "Green"
+                document.getElementById("result").innerHTML = "Correct!"
+            } else {
+                alert("Please Answer All The Questions Before Submitting")
+            }
+        }
 
         function footer() {
             var x = document.lastModified;

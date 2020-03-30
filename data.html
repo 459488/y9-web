@@ -108,7 +108,7 @@
             <a href="about.html"><i class="material-icons">info</i> About</a>
             <a href="data.html"><i class="material-icons">assessment</i> Data</a>
             <a href="quiz.html"><i class="material-icons">timer</i> Quiz</a>
-            <a href="#"><i class="material-icons">library_books</i> Stories</a>
+            <a href="stories.html"><i class="material-icons">library_books</i> Stories</a>
             <div class="dropdown">
                 <button class="dropbtn"><i class="material-icons">more_vert</i> More</button>
                 <div class="dropdown-content">
@@ -128,18 +128,19 @@
                     </div>
                 </div>
             </div>
-            <a class="blue" href="#"><i class="material-icons">group_add</i> Contribute</a>
+            <a class="blue" href="https://water.org/donate/"><i class="material-icons">group_add</i> Contribute</a>
         </div>
         
         <div class="content">           
 
             <div id="indicator">
                 
-                <h1>Find Data Using Selection System Below</h1>
+                <h1>Learn the proportion of population (%) using safely managed drinking water services, by urban/rural</h1>
+                <h2>Try It! Find Data Using The Selection System Below. This data comes from is the from the <a href="https://unstats.un.org/sdgs/indicators/database/">Sustainable Development Goal (SDG) indicator</a> 6.1.1</h2>
                 
                 <form class="step1" style="width:300px;">
                     <h3>Step 1: Enter A Geo Area</h3>
-                    <input id="geoareaname" type="text" placeholder="Enter A Place">
+                    <input id="geoareaname" type="text" placeholder="Start Typing A Place">
                 </form>
                 
                 <form id="step2">
@@ -219,6 +220,7 @@
                         <canvas id="Pie" width="0" height="0" style="border:1px solid #d3d3d3;"></canvas>
                         <canvas id="Line" width="0" height="0" style="border:1px solid #d3d3d3;"></canvas>
                         <p id="Raw"></p>
+                        <p id="Credit">Source: <em>WHO/UNICEF Joint Monitoring Programme for Water Supply, Sanitation and Hygiene (2019)</em></p>
                     </div>
 
                     <input id="resetbutton" type="reset" value="Change Data Selection (Reset)" onclick="reset()">
@@ -421,6 +423,7 @@
             var ctx = c.getContext("2d");
             if (document.getElementById("b1").checked == true) {
                 document.getElementById("BarH").style.visibility = "visible"
+                document.getElementById("Credit").style.visibility = "visible"
                 c.width = 1020;
                 c.height = (10 + graph.length * 60);
                 for (i = 0; i < graph.length; i ++) {
@@ -433,6 +436,7 @@
                 }        
             } else {
                 document.getElementById("BarH").style.visibility = "hidden"
+                document.getElementById("Credit").style.visibility = "visible"
                 c.width = 0;
                 c.height = 0;
             }
@@ -443,6 +447,7 @@
             var ctx = c.getContext("2d");
             if (document.getElementById("b2").checked == true) {
                 document.getElementById("BarV").style.visibility = "visible"
+                document.getElementById("Credit").style.visibility = "visible"
                 c.width = (10 + graph.length * 60);
                 c.height = 1020;
                 for (i = 0; i < graph.length; i ++) {
@@ -453,6 +458,7 @@
                 }        
             } else {
                 document.getElementById("BarV").style.visibility = "hidden"
+                document.getElementById("Credit").style.visibility = "hidden"
                 c.width = 0;
                 c.height = 0;
             }
